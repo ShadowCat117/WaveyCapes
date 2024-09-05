@@ -6,6 +6,7 @@ import dev.tr7zw.waveycapes.support.MinecraftCapesSupport;
 import dev.tr7zw.waveycapes.support.SupportManager;
 //spotless:off
 //#if FABRIC
+import dev.tr7zw.waveycapes.support.WynntilsSupport;
 import net.fabricmc.api.ClientModInitializer;
 import dev.tr7zw.waveycapes.support.MoreBannerFeaturesSupport;
 
@@ -39,6 +40,11 @@ public class WaveyCapesMod extends WaveyCapesBase implements ClientModInitialize
         if (doesClassExist("com.unascribed.ears.common.EarsVersion")) {
             SupportManager.mods.add(new EarsSupport());
             LOGGER.info("Wavey Capes loaded Ears support!");
+        }
+
+        if (doesClassExist("com.wynntils.core.WynntilsMod")) {
+            SupportManager.mods.add(new WynntilsSupport());
+            LOGGER.info("Wavey Capes loaded Wynntils support!");
         }
     }
 
